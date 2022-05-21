@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>E-Commerce-1</title>
+</head>
+<body>
+   <form id="form">
+      <input type="text" placeholder="Product Name" id="name">
+      <input type="text" placeholder="Category" id="category">
+      <input type="text" placeholder="Image" id="image">
+
+      <input type="text" placeholder="Price" id="price">
+      <select  id="gender">
+         <option value="">Select</option>
+         <option value="Female">Female</option>
+         <option value="Male">Male</option>
+      </select>
+      <select  id="sold">
+         <option value="False">False</option>
+         <option value="True">True</option>
+      </select>
+      <input type="submit" id="add" value="Add to Product">
+   </form>
+</body>
+</html>
+<script>
+    let form =  document.getElementById("form")
+    form.addEventListener("submit",ohyes)
+    var arr = JSON.parse(localStorage.getItem("Products"))|| []
+
+    function ohyes(){
+       event.preventDefault();
+       let name = form.name.value;
+       let category = form.category.valuw;
+       let image = form.image.value;
+       
+
+       let price = form.price.value;
+       let gender = form.gender.value;
+       let sold = form.sold.value;
+       let p = new Construct(name,category,image,price,gender, sold)
+      arr.push(p)
+      
+      localStorage.setItem("Products",JSON.stringify(arr))
+      document.querySelector("form").reset()
+      
+    }
+    
+    function Construct(name,category,image,price,gender, sold){
+       this.name = name;
+       this.category = category;
+       this.image = image;
+       this.price = price;
+       this.gender = gender;
+       this.sold = sold;
+    }
+     
+</script>
