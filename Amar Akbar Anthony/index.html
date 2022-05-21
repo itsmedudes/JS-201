@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AmarAkbarAnothny</title>
+</head>
+<body>
+   
+</body>
+</html>
+<script>
+   var Amar={
+    name:"Amar",
+    skill:"singer",
+    live:"Goa"
+   
+}
+var Akbar={
+    name:"Akbar",
+    skill:"chef",
+    live:"Mumbai"
+}
+var Anthony={
+    name:"Anthony",
+    skill:"Magician",
+    live:"Kashmir"
+}
+
+
+    function borrow(name){
+    console.log(`${name} is a ${this.skill}`)
+    }
+
+    borrow.call(Akbar,Anthony.name)
+    borrow.call(Amar,Akbar.name)
+    borrow.call(Anthony,Amar.name)
+</script>
